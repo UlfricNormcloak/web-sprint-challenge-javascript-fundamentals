@@ -81,10 +81,13 @@ const zooAnimals = [
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(array){
+    const newArray = array.filter(function(item){
+      return item.population < 5;
+    });
+    return newArray;
   }
-  
+  console.log(lowPopulationAnimals(zooAnimals));
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoo needs to know their total animal population across the United States. 
@@ -92,8 +95,8 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(acc, item){
+    const animalPopulation = array.reduce((acc, item) => acc + item.population, 0);
   }
   
   
@@ -106,7 +109,7 @@ const zooAnimals = [
   */
 
   function consume(a, b, cb){
-    
+     
   }
  
   
