@@ -58,11 +58,14 @@ const zooAnimals = [
   */
 
   function animalNames(array){
-    // let displayNames = [];
-    // array.forEach(item => displayNames(item.scientific_name));
+    let displayNames = [];
+    array.forEach(function(item){
+      displayNames.push(item.animal_name, item.scientific_name)
+    });
+    return displayNames;
   }
 
-  // console.log(animalNames(zooAnimals));
+  console.log(animalNames(zooAnimals));
   
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -98,10 +101,14 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(acc, item){
-    const animalPopulation = array.reduce((acc, item) => acc + item.population, 0);
+  function USApop(array){
+    const animalPopulation = array.reduce(function(acc, item){
+    return acc + item.population;
+    },0);
+    return animalPopulation;
   }
   
+  console.log(USApop(zooAnimals));
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
