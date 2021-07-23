@@ -25,14 +25,30 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read.
 
 1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each. 
+Answers: each on of these is a higher order array method that will scan or iterate over an existing array to either pull or compute values from it, and returning a new array.
+   a: (.map): iterates over an array, pulls elements and possibly performing some action on the value from the existing array, passing the result(s) into a new array. In the callback function, only the array element is required. The index, and array can be given as the second and third parameters (in this order, respectively), but are optional. A use case might be when one wants iterate over or map over a array of numbers, such as [1, 2, 3], twice, would return the array [2, 4, 6]. In this case we have a set of data and are performing the action on the value at each index, and pushing the results of that action into a new array.
+   b. (.filter): iterates over an array, using a callback function that essentially sets a true/false condition that is used to push data or values to a new array. As with .map, only the element is required, but the index and array can also be provided. A use case might be to pull from an array of student grades, pulling out all the students whose grades are greater than or equal to 75.
+   c. (.reduce): iterates over an array, reducing a set of values down to one value. When using .reduce(), accumulator (acc) and current value are required arguments for it to run. The index and array can be indicated but are optional here as well. The other unique feature here is the initial value, which is essentially the starting point from which the accumulator performs it's task. In the case of using addition, the initial value would typically be 0, and when using ,multiplication, the initial value would be set to 1 because anything multiplied by 0 will always be zero. One example of a case might include adding  or multiplying a set of numbers, but .reduce() is considered quite veratile.
 
 2. Explain the difference between a callback and a higher order function.
 
+Answer: A function that can accept or receive another function into it to execute is a higher-order function, and conversely, or respectively, a callback function is a function that is passed into a higher order function. 
+
 3. Explain what a closure is.
+
+Answer: Closure is based on the principle that an inner function has access to the function outside of itself, including the variables that exist in the outer scope. When an inner function reaches outside its own scope ('outward') that is when the closure occurs. 
 
 4. Describe the four principles of the 'this' keyword.
 
+Answer: 
+   a. Implicit Binding: Whenever a preceding dot calls a function, the object before the dot is 'this'.
+   b. Explicit Binding: Whenever we use Javascript's .call() or .apply() methods, 'this' is explicitly defined
+   c. Window/Global Object Binding: If 'this' is not bound by any of the principles involved in explicit, implicit, or new binding, the 'this' will make reference to the window/global object. This is true except when running in strict mode.
+   d. New Binding: When the 'new' keyword is used in the creation of a new object, under the hood Javascript associates this with the creation of the new object. 
+
 5. Why do we need super() in an extended class?
+
+Answer: if 'extend' is used in the creation of a child or sub-class, super() needs to be called from within the sub-classes' constructor function in order to pass any new attributes back up to the constructor of the parent object.  
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
