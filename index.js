@@ -59,10 +59,10 @@ const zooAnimals = [
 
   function animalNames(array){
     let displayNames = [];
-    array.forEach(function(item){
-      displayNames.push(item.animal_name, item.scientific_name)
+    array.forEach(function(item1, item2){
+      displayNames.push(item1.animal_name, item2.scientific_name);
     });
-    return displayNames;
+    return; displayNames;
   }
 
   console.log(animalNames(zooAnimals));
@@ -119,7 +119,7 @@ const zooAnimals = [
   */
 
   function consume(a, b, cb){
-     
+     return cb(a, b);
   }
  
   
